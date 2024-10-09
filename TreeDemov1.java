@@ -136,13 +136,23 @@ class Node{
 
 
 
-	   /*
-	   a method to find the node in the tree
-	   with the largest key
-	   */
+		/**
+        * Finds the maximum value in the binary search tree.
+        * The maximum value is located at the rightmost node.
+        * @param root the root node of the tree
+        * @return the maximum value in the tree
+        */
 	   public int getMax(Node root){
          //implement in here
+         if (root == null) {
+             throw new IllegalArgumentException("Tree is empty");
+         }
 
+         while (root.right != null) {
+             root = root.right; // Keep going right to find the maximum
+         }
+
+         return root.value;
 	   }
 
 
